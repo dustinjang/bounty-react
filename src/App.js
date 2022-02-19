@@ -63,13 +63,13 @@ const App = () => {
             onSaveBountyData={addBountyHandler}
           />
         )}
-        <Stack spacing={3}>
-          <BountyList bountyItems={bounties} />
-        </Stack>
-        <Fab sx={fabStyle} color="primary" aria-label="add">
-          <AddIcon onClick={formVisibilityHandler} />
-        </Fab>
       </Container>
+      <Stack margin={(3, 5, 0, 5)} spacing={3}>
+        <BountyList bountyItems={bounties} />
+      </Stack>
+      <Fab sx={fabStyle} color="primary" aria-label="add">
+        <AddIcon onClick={formVisibilityHandler} />
+      </Fab>
     </Fragment>
   );
 };
