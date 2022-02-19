@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import BountyInput from "./components/Bounties/BountyInput/BountyInput";
 import BountyList from "./components/Bounties/BountyList/BountyList";
-import { Container, Stack } from "@mui/material";
+import { Container, Stack, Toolbar } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
+import { AppBar } from "@mui/material";
 
 const FAKE_BOUNTIES = [
   {
@@ -51,20 +52,25 @@ const App = () => {
   };
 
   return (
-    <Container>
-      {formVisible && (
-        <BountyInput
-          onCancel={formVisibilityHandler}
-          onSaveBountyData={addBountyHandler}
-        />
-      )}
-      <Stack spacing={3}>
-        <BountyList bountyItems={bounties} />
-      </Stack>
-      <Fab sx={fabStyle} color="primary" aria-label="add">
-        <AddIcon onClick={formVisibilityHandler} />
-      </Fab>
-    </Container>
+    <Fragment>
+      <AppBar position="static">
+        <Toolbar>Bounties</Toolbar>
+      </AppBar>
+      <Container>
+        {formVisible && (
+          <BountyInput
+            onCancel={formVisibilityHandler}
+            onSaveBountyData={addBountyHandler}
+          />
+        )}
+        <Stack spacing={3}>
+          <BountyList bountyItems={bounties} />
+        </Stack>
+        <Fab sx={fabStyle} color="primary" aria-label="add">
+          <AddIcon onClick={formVisibilityHandler} />
+        </Fab>
+      </Container>
+    </Fragment>
   );
 };
 
