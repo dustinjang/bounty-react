@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import BountyItem from "../BountyItem/BountyItem";
+import BountyItem from "./BountyItem";
 
 const BountyList = (props) => {
   return (
