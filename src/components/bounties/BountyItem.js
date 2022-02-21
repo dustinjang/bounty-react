@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Link } from "react-router-dom";
 
 const BountyItem = (props) => {
   return (
@@ -13,7 +14,9 @@ const BountyItem = (props) => {
       <CardHeader
         avatar={
           <IconButton>
-            <Avatar></Avatar>
+            <Link to="/Account">
+              <Avatar />
+            </Link>
           </IconButton>
         }
         action={
