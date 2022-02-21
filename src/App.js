@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from "react";
 import BountyInput from "./components/Bounties/BountyInput/BountyInput";
 import BountyList from "./components/Bounties/BountyList/BountyList";
-import { Container, Stack, Toolbar } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
-import { AppBar } from "@mui/material";
+import Header from "./components/Layout/Header";
 
 const FAKE_BOUNTIES = [
   {
@@ -53,9 +53,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <AppBar position="static">
-        <Toolbar>Bounties</Toolbar>
-      </AppBar>
+      <Header />
       <Container>
         {formVisible && (
           <BountyInput
