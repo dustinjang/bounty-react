@@ -1,18 +1,18 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import Account from "./Account";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Link to="/">
+        <NavLink to="/">
           <Typography>Bounties</Typography>
-        </Link>
-        <Link to="/Account">
+        </NavLink>
+        <NavLink to="/Account">
           <Account />
-        </Link>
+        </NavLink>
       </Toolbar>
     </AppBar>
   );
