@@ -12,7 +12,7 @@ const BountyDetail = () => {
     <Switch>
       <h1>Bounty Details</h1>
       <p>{params.bountyId}</p>
-      <Route path={`/bounty/${params.bounty}/comments`}></Route>
+      <Route path={`/bounty/${params.bountyId}/comments`}></Route>
     </Switch>
   );
 };
