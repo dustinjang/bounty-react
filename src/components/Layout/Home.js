@@ -4,37 +4,20 @@ import BountyList from "../bounties/BountyList";
 import { Container, Stack } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
-
-const FAKE_BOUNTIES = [
-  {
-    id: "b1",
-    user: "Dustin", // make drop down selector?
-    description: "Go to the gym for 20/28 days",
-    failureCost: 99.99, //iterate to a dropdown with options for money, social cost, labor
-    dateDue: new Date(2022, 2, 28),
-  },
-  {
-    id: "b2",
-    user: "Phill",
-    description: "Create UI for Vertalo",
-    failureCost: 29.99, //iterate to a dropdown with options for money, social cost, labor
-    dateDue: new Date(2021, 4, 28),
-  },
-  {
-    id: "b3",
-    user: "Dustin",
-    description: "Apply for 3 jobs",
-    failureCost: 29.99, //iterate to a dropdown with options for money, social cost, labor
-    dateDue: new Date(2022, 4, 28),
-  },
-];
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Home = () => {
-  const [bounties, setBounties] = useState(FAKE_BOUNTIES);
+  const history = useHistory();
 
   const addBountyHandler = (bountyData) => {
-    setBounties((prevBounties) => {
-      return [bountyData, ...prevBounties];
+    fetch("https://bounties-e6d08-default-rtdb.firebaseio.com/bounties.json", {
+      method: "POST",
+      body: JSON.stringify(bountyData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      history.replace("/");
     });
   };
 
@@ -59,7 +42,7 @@ const Home = () => {
             onSaveBountyData={addBountyHandler}
           />
         )}
-        <BountyList bountyItems={bounties} />
+        <BountyList />
       </Stack>
       <Fab sx={fabStyle} color="primary" aria-label="add">
         <AddIcon onClick={formVisibilityHandler} />

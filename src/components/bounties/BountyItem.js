@@ -9,8 +9,6 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
 
 const BountyItem = (props) => {
-  const bountyname = JSON.stringify(props.description).split(" ").join("");
-
   return (
     <Card>
       <CardHeader
@@ -27,7 +25,6 @@ const BountyItem = (props) => {
           </IconButton>
         }
         title={props.user}
-        subheader={props.dateDue.toLocaleDateString("en-US")}
       />
       <CardContent>
         <Link
@@ -41,6 +38,7 @@ const BountyItem = (props) => {
         <Typography variant="subtitle1" component="div">
           Cost for Failure: {props.failureCost}
         </Typography>
+        <Typography>{props.dateDue}</Typography>
       </CardContent>
     </Card>
   );
