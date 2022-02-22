@@ -14,7 +14,7 @@ const BountyItem = (props) => {
       <CardHeader
         avatar={
           <IconButton>
-            <Link to="/Account">
+            <Link to="/account">
               <Avatar />
             </Link>
           </IconButton>
@@ -28,7 +28,7 @@ const BountyItem = (props) => {
         subheader={props.dateDue.toLocaleDateString("en-US")}
       />
       <CardContent>
-        <Link to="/Bounty/:BountyId" style={{ textDecoration: "none" }}>
+        <Link to="/bounty/:bountyId" style={{ textDecoration: "none" }}>
           <Typography color="white" variant="body1">
             {props.description}
           </Typography>

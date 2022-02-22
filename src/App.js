@@ -6,6 +6,7 @@ import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 import Home from "./components/layout/Home";
 import BountyDetail from "./components/bounties/BountyDetail";
 import { Redirect } from "react-router-dom";
+import BountyInput from "./components/bounties/BountyInput";
 
 const App = () => {
   return (
@@ -13,15 +14,15 @@ const App = () => {
       <Header />
       <Switch>
         <Route path="/" exact>
-          <Redirect to="/Bounty" />
+          <Redirect to="/bounty" />
         </Route>
-        <Route path="/Bounty" exact>
+        <Route path="/bounty" exact>
           <Home />
         </Route>
-        <Route path="/Account">
+        <Route path="/account">
           <Account />
         </Route>
-        <Route path="/Bounty/:BountyId">
+        <Route path="/bounty/:bountyId">
           <BountyDetail />
         </Route>
       </Switch>
