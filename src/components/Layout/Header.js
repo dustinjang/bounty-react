@@ -17,7 +17,7 @@ const Header = () => {
             </Typography>
           </Link>
         </Container>
-        <Link to="/Account">
+        <Link to="/account">
           <IconButton>
             <Avatar src={Dustin} />
           </IconButton>
