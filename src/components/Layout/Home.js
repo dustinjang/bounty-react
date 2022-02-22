@@ -52,15 +52,13 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Container>
+      <Stack margin={(3, 5, 0, 5)} spacing={3}>
         {formVisible && (
           <BountyInput
             onCancel={formVisibilityHandler}
             onSaveBountyData={addBountyHandler}
           />
         )}
-      </Container>
-      <Stack margin={(3, 5, 0, 5)} spacing={3}>
         <BountyList bountyItems={bounties} />
       </Stack>
       <Fab sx={fabStyle} color="primary" aria-label="add">

@@ -10,6 +10,8 @@ import {
   TextField,
   FormLabel,
   CardContent,
+  Grid,
+  Container,
 } from "@mui/material";
 
 const BountyInput = (props) => {
@@ -49,9 +51,9 @@ const BountyInput = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <Card>
-        <CardContent>
+    <Card>
+      <form onSubmit={submitHandler}>
+        <Grid margin={(5, 5, 5, 5)}>
           <FormControl>
             <Box></Box>
             <Select
@@ -96,9 +98,9 @@ const BountyInput = (props) => {
               Add Bounty
             </Button>
           </Box>
-        </CardContent>
-      </Card>
-    </form>
+        </Grid>
+      </form>
+    </Card>
   );
 };
 
