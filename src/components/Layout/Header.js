@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Dustin from "../../assets/Dustin.jpeg";
 import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
@@ -11,17 +11,17 @@ const Header = () => {
     <AppBar position="static">
       <Toolbar>
         <Container maxWidth="xl">
-          <NavLink to="/">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <Typography color="white" component="div" variant="h6">
               Bounties
             </Typography>
-          </NavLink>
+          </Link>
         </Container>
-        <NavLink to="/Account">
+        <Link to="/Account">
           <IconButton>
             <Avatar src={Dustin} />
           </IconButton>
-        </NavLink>
+        </Link>
       </Toolbar>
     </AppBar>
   );

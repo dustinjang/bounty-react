@@ -28,8 +28,12 @@ const BountyItem = (props) => {
         subheader={props.dateDue.toLocaleDateString("en-US")}
       />
       <CardContent>
-        <Typography variant="body1">{props.description}</Typography>
-        <Typography variant="body2">
+        <Link to="/Bounty/:BountyId" style={{ textDecoration: "none" }}>
+          <Typography color="white" variant="body1">
+            {props.description}
+          </Typography>
+        </Link>
+        <Typography variant="subtitle1" component="div">
           Cost for Failure: {props.failureCost}
         </Typography>
       </CardContent>
