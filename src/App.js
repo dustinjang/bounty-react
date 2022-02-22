@@ -25,6 +25,9 @@ const App = () => {
         <Route path="/bounty/:bountyId">
           <BountyDetail />
         </Route>
+        <Route path="/newBounty">
+          <BountyInput />
+        </Route>
       </Switch>
     </Fragment>
   );
