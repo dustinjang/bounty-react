@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import {
+  Card,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  FormLabel,
+  CardContent,
+} from "@mui/material";
 
 const BountyInput = (props) => {
   const [enteredUser, setEnteredUser] = useState("Dustin");
@@ -39,47 +50,54 @@ const BountyInput = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div>
-        <label>User </label>
-        <select value={enteredUser} onChange={userDropDownHandler}>
-          <option value="Dustin">Dustin</option>
-          <option value="Phill">Phill</option>
-        </select>
-      </div>
-      <div>
-        <label>Bounty </label>
-        <input
-          type="text"
-          value={enteredBounty}
-          onChange={descriptionChangeHandler}
-        />
-      </div>
-      <div>
-        <label>Due Date </label>
-        <input
-          value={enteredDueDate}
-          type="date"
-          onChange={dateChangeHandler}
-        />
-      </div>
-      <div>
-        <label>Cost for Failure </label>
-        <input
-          value={enteredFailureCost}
-          type="number"
-          min="0.01"
-          step="0.01"
-          onChange={failureCostChangeHandler}
-        />
-      </div>
-      <div>
-        <Button type="button" onClick={props.onCancel}>
-          Cancel
-        </Button>
-        <Button variant="contained" type="submit">
-          Add Bounty
-        </Button>
-      </div>
+      <Card>
+        <CardContent>
+          <FormControl>
+            <Box></Box>
+            <Select
+              labelId="user-label"
+              id="user"
+              value={enteredUser}
+              onChange={userDropDownHandler}
+            >
+              <MenuItem value={"Dustin"}>Dustin</MenuItem>
+              <MenuItem value={"Phill"}>Phill</MenuItem>
+            </Select>
+            <TextField
+              id="Bounty Description"
+              label="Bounty Description"
+              value={enteredBounty}
+              onChange={descriptionChangeHandler}
+            />
+          </FormControl>
+          <Box>
+            <label>Due Date </label>
+            <input
+              value={enteredDueDate}
+              type="date"
+              onChange={dateChangeHandler}
+            />
+          </Box>
+          <Box>
+            <label>Cost for Failure </label>
+            <input
+              value={enteredFailureCost}
+              type="number"
+              min="0.01"
+              step="0.01"
+              onChange={failureCostChangeHandler}
+            />
+          </Box>
+          <Box>
+            <Button type="button" onClick={props.onCancel}>
+              Cancel
+            </Button>
+            <Button variant="contained" type="submit">
+              Add Bounty
+            </Button>
+          </Box>
+        </CardContent>
+      </Card>
     </form>
   );
 };
