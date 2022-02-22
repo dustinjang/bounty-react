@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { CardHeader } from "@mui/material";
+import { Button, CardHeader } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
@@ -20,21 +20,18 @@ const BountyItem = (props) => {
           </IconButton>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <Link
+            to={`/bounty/${props.description}`}
+            style={{ textDecoration: "none" }}
+          >
+            <Button>Details</Button>
+          </Link>
         }
         title={props.user}
       />
       <CardContent>
-        <Link
-          to={`/bounty/${props.description}`}
-          style={{ textDecoration: "none" }}
-        >
-          <Typography color="white" variant="body1">
-            {props.description}
-          </Typography>
-        </Link>
+        <Typography variant="body1">{props.description}</Typography>
+
         <Typography variant="subtitle1" component="div">
           Cost for Failure: {props.failureCost}
         </Typography>

@@ -1,18 +1,24 @@
+import { Card, CardContent, Typography } from "@mui/material";
 import React, { Fragment } from "react";
 import {
   useParams,
   Switch,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
+import { Stack } from "@mui/material";
 
 const BountyDetail = () => {
   const params = useParams();
 
   return (
-    <Fragment>
-      <h1>Bounty Details</h1>
-      <p>{params.bountyId}</p>
-    </Fragment>
+    <Stack margin={(3, 5, 0, 5)} spacing={3}>
+      <Card>
+        <CardContent>
+          <Typography variant="h5">Bounty Details</Typography>
+          <Typography variant="body1">{params.bountyId}</Typography>
+        </CardContent>
+      </Card>
+    </Stack>
   );
 };
 
