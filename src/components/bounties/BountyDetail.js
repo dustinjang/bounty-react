@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {
   useParams,
   Switch,
@@ -9,11 +9,10 @@ const BountyDetail = () => {
   const params = useParams();
 
   return (
-    <Switch>
+    <Fragment>
       <h1>Bounty Details</h1>
       <p>{params.bountyId}</p>
-      <Route path={`/bounty/${params.bountyId}/comments`}></Route>
-    </Switch>
+    </Fragment>
   );
 };
 

@@ -7,6 +7,7 @@ import Home from "./components/layout/Home";
 import BountyDetail from "./components/bounties/BountyDetail";
 import { Redirect } from "react-router-dom";
 import BountyInput from "./components/bounties/BountyInput";
+import NotFound from "./components/layout/NotFound";
 
 const App = () => {
   return (
@@ -27,6 +28,9 @@ const App = () => {
         </Route>
         <Route path="/newBounty">
           <BountyInput />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </Fragment>

@@ -12,6 +12,9 @@ import {
   CardContent,
   Grid,
   Container,
+  CardHeader,
+  Typography,
+  CardActions,
 } from "@mui/material";
 
 const BountyInput = (props) => {
@@ -52,53 +55,60 @@ const BountyInput = (props) => {
 
   return (
     <Card>
+      <CardHeader title={<Typography variant="h6">New Bounty</Typography>} />
       <form onSubmit={submitHandler}>
-        <Grid margin={(5, 5, 5, 5)}>
-          <FormControl>
-            <Box></Box>
-            <Select
-              labelId="user-label"
-              id="user"
-              value={enteredUser}
-              onChange={userDropDownHandler}
-            >
-              <MenuItem value={"Dustin"}>Dustin</MenuItem>
-              <MenuItem value={"Phill"}>Phill</MenuItem>
-            </Select>
-            <TextField
-              id="Bounty Description"
-              label="Bounty Description"
-              value={enteredBounty}
-              onChange={descriptionChangeHandler}
-            />
-          </FormControl>
-          <Box>
-            <label>Due Date </label>
-            <input
-              value={enteredDueDate}
-              type="date"
-              onChange={dateChangeHandler}
-            />
-          </Box>
-          <Box>
-            <label>Cost for Failure </label>
-            <input
-              value={enteredFailureCost}
-              type="number"
-              min="0.01"
-              step="0.01"
-              onChange={failureCostChangeHandler}
-            />
-          </Box>
-          <Box>
-            <Button type="button" onClick={props.onCancel}>
-              Cancel
-            </Button>
-            <Button variant="contained" type="submit">
-              Add Bounty
-            </Button>
-          </Box>
-        </Grid>
+        <CardContent>
+          <Grid container spacing={1}>
+            <Grid item xs={6} md={8}>
+              <Select
+                labelId="user-label"
+                id="user"
+                value={enteredUser}
+                onChange={userDropDownHandler}
+              >
+                <MenuItem value={"Dustin"}>Dustin</MenuItem>
+                <MenuItem value={"Phill"}>Phill</MenuItem>
+              </Select>
+            </Grid>
+            <Grid item xs={6} md={8}>
+              <TextField
+                id="date"
+                label="Due Date"
+                type="date"
+                value={enteredDueDate}
+                onChange={dateChangeHandler}
+                defaultValue={null}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+            </Grid>
+            <Grid item xs={6} md={8}>
+              <TextField
+                id="Bounty Description"
+                label="Bounty Description"
+                value={enteredBounty}
+                onChange={descriptionChangeHandler}
+              />
+            </Grid>
+            <Grid item xs={6} md={8}>
+              <TextField
+                id="failurecost"
+                label="Cost for Failure"
+                value={enteredFailureCost}
+                onChange={failureCostChangeHandler}
+              />
+            </Grid>
+            <CardActions>
+              <Button type="button" onClick={props.onCancel}>
+                Cancel
+              </Button>
+              <Button variant="contained" type="submit">
+                Add Bounty
+              </Button>
+            </CardActions>
+          </Grid>
+        </CardContent>
       </form>
     </Card>
   );
