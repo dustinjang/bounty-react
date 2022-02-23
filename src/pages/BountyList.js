@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import BountyItem from "./BountyItem";
+import BountyItem from "../components/bounties/BountyItem";
 
 const BountyList = () => {
   const [bounties, setBounties] = useState([]);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Dustin from "../../assets/Dustin.jpeg";

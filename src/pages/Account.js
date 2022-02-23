@@ -1,16 +1,11 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import { Avatar, CardContent, Typography } from "@mui/material";
-import Dustin from "../../assets/Dustin.jpeg";
-import { Container } from "@mui/material";
+import Dustin from "../assets/Dustin.jpeg";
 import { Card } from "@mui/material";
 import { Stack } from "@mui/material";
 
 const Account = () => {
-  const style = {
-    textAlign: "center",
-  };
-
   return (
     <Stack margin={(3, 5, 0, 5)}>
       <Card>

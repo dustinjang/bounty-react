@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
-import BountyInput from "../bounties/BountyInput";
-import BountyList from "../bounties/BountyList";
-import { Container, Stack } from "@mui/material";
+import BountyInput from "../components/bounties/BountyInput";
+import BountyList from "./BountyList";
+import { Stack } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";

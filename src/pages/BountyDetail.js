@@ -1,10 +1,5 @@
 import { Card, CardContent, Typography } from "@mui/material";
-import React, { Fragment } from "react";
-import {
-  useParams,
-  Switch,
-  Route,
-} from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { Stack } from "@mui/material";
 
 const BountyDetail = () => {

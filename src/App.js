@@ -1,13 +1,12 @@
 import React, { Fragment } from "react";
 import Header from "./components/layout/Header";
-import Account from "./components/layout/Account";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
-import { Switch } from "react-router-dom/cjs/react-router-dom.min";
-import Home from "./components/layout/Home";
-import BountyDetail from "./components/bounties/BountyDetail";
+import Account from "./pages/Account";
+import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import Home from "./pages/Home";
+import BountyDetail from "./pages/BountyDetail";
 import { Redirect } from "react-router-dom";
 import BountyInput from "./components/bounties/BountyInput";
-import NotFound from "./components/layout/NotFound";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
