@@ -22,18 +22,26 @@ const App = () => {
           {isLoggedIn && <Redirect to="/bounty" />}
           {!isLoggedIn && <Redirect to="/welcome" />}
         </Route>
-        <Route path="/bounty" exact>
-          <Home />
-        </Route>
-        <Route path="/account">
-          <Account />
-        </Route>
-        <Route path="/bounty/:bountyId">
-          <BountyDetail />
-        </Route>
-        <Route path="/newBounty">
-          <BountyInput />
-        </Route>
+        {isLoggedIn && (
+          <Route path="/bounty" exact>
+            <Home />
+          </Route>
+        )}
+        {isLoggedIn && (
+          <Route path="/account">
+            <Account />
+          </Route>
+        )}
+        {isLoggedIn && (
+          <Route path="/bounty/:bountyId">
+            <BountyDetail />
+          </Route>
+        )}
+        {isLoggedIn && (
+          <Route path="/newBounty">
+            <BountyInput />
+          </Route>
+        )}
         <Route path="/welcome">
           <Welcome />
         </Route>
