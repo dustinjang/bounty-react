@@ -8,15 +8,19 @@ import { Redirect } from "react-router-dom";
 import BountyInput from "./components/bounties/BountyInput";
 import NotFound from "./pages/NotFound";
 import Welcome from "./pages/Welcome";
-import AuthPage from "./pages/AuthPage";
+import AuthContext from "./store/auth-context";
 
 const App = () => {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+
   return (
     <Fragment>
       <Header />
       <Switch>
         <Route path="/" exact>
-          <Redirect to="/bounty" />
+          {isLoggedIn && <Redirect to="/bounty" />}
+          {!isLoggedIn && <Redirect to="/welcome" />}
         </Route>
         <Route path="/bounty" exact>
           <Home />

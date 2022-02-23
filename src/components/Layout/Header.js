@@ -30,9 +30,11 @@ const Header = () => {
             </IconButton>
           </Link>
         )}
-        <Link to="/welcome">
-          <Button>Login</Button>
-        </Link>
+        {!isLoggedIn && (
+          <Link to="/welcome">
+            <Button>Login</Button>
+          </Link>
+        )}
         {isLoggedIn && (
           <Link to="/welcome">
             <Button>Logout</Button>

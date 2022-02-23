@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useState, useRef, useContext } from "react";
 import AuthContext from "../../store/auth-context";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const AuthForm = () => {
   //Ref
@@ -16,6 +17,7 @@ const AuthForm = () => {
   const passwordInputRef = useRef();
 
   const authCtx = useContext(AuthContext);
+  const history = useHistory();
 
   //State
   const [isLogin, setIsLogin] = useState(true);
@@ -64,6 +66,7 @@ const AuthForm = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken);
+        history.replace("/");
       })
       .catch((err) => {
         alert(err.message);
@@ -92,7 +95,9 @@ const AuthForm = () => {
             />
             <Container>
               {!isLoading && (
-                <Button>{isLogin ? "Login" : "Create Account"}</Button>
+                <Button type="submit">
+                  {isLogin ? "Login" : "Create Account"}
+                </Button>
               )}
               {isLoading && <p>Loading...</p>}
               <Button type="button" onClick={switchAuthModeHandler}>
