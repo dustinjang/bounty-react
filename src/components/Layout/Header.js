@@ -11,6 +11,11 @@ const Header = () => {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
 
+  const logoutHandler = () => {
+    authCtx.logout();
+    // redirect user;
+  };
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -37,7 +42,7 @@ const Header = () => {
         )}
         {isLoggedIn && (
           <Link to="/welcome">
-            <Button>Logout</Button>
+            <Button onClick={logoutHandler}>Logout</Button>
           </Link>
         )}
       </Toolbar>
