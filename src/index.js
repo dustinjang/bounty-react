@@ -5,15 +5,15 @@ import App from "./App";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 import { BrowserRouter } from "react-router-dom";
-import { AccountContextProvider } from "./store/account-context";
+import { AuthContextProvider } from "./store/auth-context";
 
 ReactDOM.render(
-  <AccountContextProvider>
+  <AuthContextProvider>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
     </BrowserRouter>
-  </AccountContextProvider>,
+  </AuthContextProvider>,
   document.getElementById("root")
 );

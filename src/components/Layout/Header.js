@@ -1,28 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Dustin from "../../assets/Dustin.jpeg";
 import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
+import AuthContext from "../../store/auth-context";
 
 const Header = () => {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+
   return (
     <AppBar position="static">
       <Toolbar>
         <Container maxWidth="xl">
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Typography color="white" component="div" variant="h6">
-              Bounties
-            </Typography>
-          </Link>
+          {isLoggedIn && (
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Typography color="white" component="div" variant="h6">
+                Bounties
+              </Typography>
+            </Link>
+          )}
         </Container>
-        <Link to="/account">
-          <IconButton>
-            <Avatar src={Dustin} />
-          </IconButton>
+        {isLoggedIn && (
+          <Link to="/account">
+            <IconButton>
+              <Avatar src={Dustin} />
+            </IconButton>
+          </Link>
+        )}
+        <Link to="/welcome">
+          <Button>Login</Button>
         </Link>
-        <Button>Login</Button>
+        {isLoggedIn && (
+          <Link to="/welcome">
+            <Button>Logout</Button>
+          </Link>
+        )}
       </Toolbar>
     </AppBar>
   );
