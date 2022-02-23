@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Dustin from "../../assets/Dustin.jpeg";
 import IconButton from "@mui/material/IconButton";
@@ -22,6 +22,7 @@ const Header = () => {
             <Avatar src={Dustin} />
           </IconButton>
         </Link>
+        <Button>Login</Button>
       </Toolbar>
     </AppBar>
   );
