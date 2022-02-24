@@ -28,9 +28,12 @@ const Home = () => {
   };
 
   const fabStyle = {
-    position: "absolute",
-    bottom: 16,
-    right: 16,
+    margin: 0,
+    top: "auto",
+    right: 20,
+    bottom: 20,
+    left: "auto",
+    position: "fixed",
   };
 
   return (
