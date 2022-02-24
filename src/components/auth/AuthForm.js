@@ -12,14 +12,12 @@ import AuthContext from "../../store/auth-context";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const AuthForm = () => {
-  //Ref
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
   const authCtx = useContext(AuthContext);
   const history = useHistory();
 
-  //State
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
