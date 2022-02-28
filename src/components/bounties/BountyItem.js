@@ -5,7 +5,6 @@ import { Button, CardHeader } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
 
 const BountyItem = (props) => {
@@ -31,7 +30,6 @@ const BountyItem = (props) => {
       />
       <CardContent>
         <Typography variant="body1">{props.description}</Typography>
-
         <Typography variant="subtitle1" component="div">
           Cost for Failure: {props.failureCost}
         </Typography>
