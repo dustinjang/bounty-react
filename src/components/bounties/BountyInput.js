@@ -41,6 +41,7 @@ const BountyInput = (props) => {
     event.preventDefault();
 
     const bountyData = {
+      id: Math.random().toString(),
       user: enteredUser,
       description: enteredBounty,
       failureCost: enteredFailureCost,
