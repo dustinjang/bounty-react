@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import { useHistory } from "react-router-dom";
 import {
   Card,
-  FormControl,
-  InputLabel,
-  MenuItem,
   Select,
   TextField,
-  FormLabel,
+  CardHeader,
+  MenuItem,
   CardContent,
   Grid,
-  Container,
-  CardHeader,
   Typography,
   CardActions,
 } from "@mui/material";
 
 const BountyInput = (props) => {
+  const history = useHistory();
+
   const [enteredUser, setEnteredUser] = useState("Dustin");
   const [enteredBounty, setEnteredBounty] = useState("");
   const [enteredDueDate, setDueDate] = useState();
@@ -50,7 +48,15 @@ const BountyInput = (props) => {
       dateDue: new Date(enteredDueDate),
     };
 
-    props.onSaveBountyData(bountyData);
+    fetch("https://bounties-e6d08-default-rtdb.firebaseio.com/bounties.json", {
+      method: "POST",
+      body: JSON.stringify(bountyData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      history.replace("/");
+    });
   };
 
   return (
