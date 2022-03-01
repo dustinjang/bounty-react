@@ -41,11 +41,10 @@ const BountyInput = (props) => {
     event.preventDefault();
 
     const bountyData = {
-      id: Math.random().toString(),
       user: enteredUser,
       description: enteredBounty,
       failureCost: enteredFailureCost,
-      dateDue: new Date(enteredDueDate),
+      dateDue: new Date(enteredDueDate).toLocaleDateString(),
     };
 
     fetch("https://bounties-e6d08-default-rtdb.firebaseio.com/bounties.json", {
